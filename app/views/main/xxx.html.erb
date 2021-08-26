@@ -1,0 +1,23 @@
+<h1>Main#abc</h1>
+<p>Find me in app/views/main/abc.html.erb</p>
+
+<p> eiei </p>
+
+<b> bold </b>
+
+
+
+<br>
+	<!-- <% if(params.has_key?(:a) && params.has_key?(:b)) %> -->
+	<% for i in @temp1..@temp2 do %>
+		<%= i %>
+	<%end%>
+	<!-- <%end%> -->
+</br>
+
+<!-- User supples param a as <%=params[:a]%>  not good -->
+<% if(params.has_key?(:tiewclub)) %>
+	The user supplies param as <%= @result %>
+<% else %>
+	The user supplies param as <%= @result.class %>
+<% end %>

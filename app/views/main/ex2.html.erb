@@ -1,0 +1,45 @@
+<h1>ex2</h1>
+<p>Test Test</p>
+
+<p> eiei </p>
+
+<b> bold </b>
+
+<br>
+	<!-- a & b have parameters -->
+	<% if(params.has_key?(:a) && params.has_key?(:b)) %>
+		
+		<!-- normal sequence -->
+		<% begin %>
+			<% for i in @x..@y do %>
+				<%= i%>
+			<% end %>
+		<% rescue Exception => e %>
+			Your parameter is not valid
+		<%end%>
+
+	<% end %>
+
+	<!-- a not exist -->
+	<% if(!params.has_key?(:a)) %>
+		Please give me the parameter "a"
+		</br>
+	<% end %>
+
+	<!-- b not exist -->
+	<% if(!params.has_key?(:b)) %>
+		Please give me the parameter "b"
+		</br>
+	<% end %>
+	
+
+
+
+<!-- <%= (1..10).to_a %> 
+
+<br> 
+<% for i in 1..10 do %>
+	<%= i*10%>
+<% end %>
+
+The current time is <%= Time.zone.now %> -->
