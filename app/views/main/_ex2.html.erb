@@ -1,0 +1,75 @@
+<h1>ex2</h1>
+<p>Test Test</p>
+
+	<!-- a not exist -->
+	<% if(!params.has_key?(:a)) %>
+		Please give me the parameter "a"
+		</br>
+	<% end %>
+
+	<!-- b not exist -->
+	<% if(!params.has_key?(:b)) %>
+		Please give me the parameter "b"
+		</br>
+	<% end %>
+	
+	<!-- a & b have parameters -->
+	<% if(params.has_key?(:a) && params.has_key?(:b)) %>
+		<% flag1 = true %>
+		<% flag2 = true %>
+
+<!--	trash -> did not delete cuz it's a failure to success
+		<% @x.to_s.each_char{ |c| 
+
+			if c.class != Integer
+				#flag1 = false
+				#Your parameter (a) is unvalid 
+				break
+			end
+		}%>
+		<% @y.to_s.each_char{ |c| 
+
+			if c.class != Integer
+				#flag2 = false
+				#Your parameter (a) is unvalid 
+				break
+			end
+		}%>
+		<% if @x.to_i == 0 && @x.length != 1%>
+			Your parameter (a) is unvalid
+			<br>
+		<% end %>
+		<% if @y.to_i == 0 && @y.length != 1%>
+			Your parameter (b) is unvalid
+			<br>
+		<% end %>
+-->
+
+		<% if @x.to_s.to_i.to_s != @x.to_s %>
+			Your parameter (a) is unvalid
+			<br>
+			<% flag1 = false %>
+		<% end %>
+		<% if @y.to_s.to_i.to_s != @y.to_s %>
+			<% flag2 = false %>
+			Your parameter (b) is unvalid
+			<br>
+		<% end %>
+
+		<!-- normal sequence -->
+		<!--<%= flag1 %>
+		<%= flag2 %> -->
+		<% if(flag1 && flag2) %>
+			<% for i in @x.to_i..@y.to_i do %>
+					<%= i%>
+			<% end %>
+		<% end%>
+	<% end %>
+
+
+<!--
+<br> 
+<% for i in 1..10 do %>
+	<%= i*10%>
+<% end %>
+The current time is <%= Time.zone.now %> -->

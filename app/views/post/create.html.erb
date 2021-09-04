@@ -1,0 +1,13 @@
+<% if @isExist %>
+<p>The post was created by <strong>user_id : </strong>
+	<%= @user_id %>
+	<br> <br>
+	at <%= @time %>
+</p>
+<br>
+<p> Your msg is <%= @msg %> </p>
+<% else %>
+	<strong>Please create your account at /user/create?name=(your_name)&email=(your_email)</strong>
+<% end %>
+
+

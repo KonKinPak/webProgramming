@@ -1,0 +1,11 @@
+<% if @isExist %>
+	<% @user.printAllPost %>
+	<% @user.posts.each do |post| %>
+			Your message is <%= post.msg %> posted at <%= post.created_at.to_formatted_s(:short) %>
+			<br>
+	<%end %>
+<% else %>
+	<strong>Please create your account at /user/create?name=(your_name)&email=(your_email)</strong>
+<% end %>
+
+

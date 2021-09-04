@@ -1,0 +1,14 @@
+- if @isExist
+  %h1 Successful Creation
+  %p
+    The post was created by
+    %strong user_id :
+    = @user_id
+    %br/
+    %br/
+    at #{@time}
+  %br/
+  %p
+    Your msg is #{@msg}
+- else
+  Please create your account at /user/create?name= <your name>&email=<your email>
